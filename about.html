@@ -7,18 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="index.html">Back to Home</a>
     <header>
         <h1>About Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Back to Home</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <p>Hi, I'm Zach. I'm a 4th year Computer Science student at UCSD. My 
-        dream job would be working as a programmer and game designer with 
-        a team to make indie games. I'm also interested in data science and
-        data analytics; I find digging around and finding patterns/trends 
-        in data to be fun. In my free time I like to surf, hike, garden, and 
-        of course play good video games.
-        </p>
+        <div class="custom-box">
+            <p class="title">
+                Hi, I'm Zach. I'm a 4th year Computer Science student at UCSD. My 
+                dream job would be working as a programmer and game designer with 
+                a team to make indie games. I'm also interested in data science and
+                data analytics; I find digging around and finding patterns/trends 
+                in data to be fun. In my free time I like to surf, hike, garden, and 
+                of course play good video games.
+            </p>
+        </div>
+        <picture>
+            <source srcset="blacksbeach.webp" type="webp" media="(min-width: 768px)">
+            <source srcset="blacksbeach.jpg" type="jpg">
+            <img src="blacksbeach.jpg" alt="A nice view of La Jolla's coast" class="responsive-img">
+        </picture>
     </main>
 </body>
 </html>

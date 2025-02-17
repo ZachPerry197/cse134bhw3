@@ -17,10 +17,12 @@
 body {
     font-family: var(--font-family), sans-serif;
     font-size: var(--font-size, 16px);
-    margin: 0;
-    padding: 0;
     background-color: var(--secondary-color, #b0c4de);
     color: black;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 /* Flexbox layout */
@@ -31,6 +33,7 @@ header {
     background: var(--primary-color, #3498db);
     color: white;
     padding: 1rem;
+    position: relative;
 }
 
 nav ul {
@@ -49,7 +52,7 @@ nav a {
 }
 
 nav a:hover {
-    color: yellow;
+    color: orange;
 }
 
 /* Grid Layout for main section */
@@ -60,6 +63,25 @@ main {
     padding: 2rem;
 }
 
+.responsive-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .responsive-img {
+        max-width: 100%;
+    }
+}
+
 /* Responsive media query */
 @media (min-width: 768px) {
     main {
@@ -67,7 +89,7 @@ main {
     }
 }
 
-/* CSS Animations */
+/* Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -83,12 +105,12 @@ h2, h3 {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Transformations */
+/* Transformation */
 nav a:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 
-/* Using has() selector */
+/* has() selector */
 section:has(h2) {
     border: 2px solid var(--primary-color, #3498db);
     padding: 1rem;
@@ -108,10 +130,69 @@ section {
     padding: 5%;
 }
 
-/* Scoped CSS inside a component */
+/* Scoped CSS inside component */
 @scope (.custom-box) {
     .title {
         font-weight: bold;
+        font-size: 1.5rem;
+    }
+}
+
+/* Mobile navigation */
+#nav-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--primary-color, #3498db);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#nav-menu.active {
+    display: flex;
+}
+
+/* Hamburger button styling */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    /* Show hamburger menu */
+    #menu-toggle {
+        display: block;
+    }
+
+    /* Hide regular nav */
+    nav ul {
+        display: none;
+    }
+
+    /* Style for mobile menu */
+    #nav-menu.active ul {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9rem;
+    }
+    
+    h1 {
         font-size: 1.5rem;
     }
 }

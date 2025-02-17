@@ -12,6 +12,21 @@
 <body>
     <header>
         <h1>Zachary Perry's Portfolio</h1>
+
+        <!-- Hamburger menu button -->
+        <button id="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -22,6 +37,7 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+
     </header>
     <main>
         <section>
@@ -30,6 +46,11 @@
             <h3>zperry@ucsd.edu</h3>
             <h3>PID: A16963488</h3>
         </section>
+        <picture>
+            <source srcset="snowball.webp" type="webp" media="(min-width: 768px)">
+            <source srcset="snowball.jpg" type="jpg">
+            <img src="snowball.jpg" alt="A fluffy white dog" class="responsive-img">
+        </picture>
     </main>
     <footer>
         <p>Zach Perry zperry@ucsd.edu</p>
